@@ -88,6 +88,17 @@ class JSTools {
 		return obj;
 	}
 	
+	//********************************************
+	//Replace all substring from an html template
+	//ex:  replaceAllString('<div class="@@class@@">@@name@@</div>', {'@@class@@':'class-name', '@@name@@':'Abe Lincoln'})
+	//********************************************		
+	function replaceAllStrings(htmlTemplate, substringObj){
+	    Object.keys(substringObj).forEach(function(key){
+		htmlTemplate = htmlTemplate.replace(key, substringObj[key]);
+	    });
+	    return htmlTemplate;
+	}	
+	
 	
 	
 }
