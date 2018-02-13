@@ -94,7 +94,8 @@ class JSTools {
 	//********************************************		
 	function replaceAllStrings(htmlTemplate, substringObj){
 	    Object.keys(substringObj).forEach(function(key){
-		htmlTemplate = htmlTemplate.replace(key, substringObj[key]);
+		var regex = new RegExp(key, "g");
+		htmlTemplate = htmlTemplate.replace(regex, substringObj[key]);
 	    });
 	    return htmlTemplate;
 	}	
